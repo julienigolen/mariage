@@ -62,11 +62,15 @@ if (form) {
       }
 
       form.reset();
+      const successMessage = sheetWebhook
+        ? "Merci, ta confirmation a bien été envoyée et enregistrée. Nous sommes impatients de vous retrouver tous."
+        : "Merci, votre confirmation a bien ete envoyee.";
+
       if (note) {
-        note.textContent = sheetWebhook
-          ? "Merci, votre confirmation a bien ete envoyee et enregistree."
-          : "Merci, votre confirmation a bien ete envoyee.";
+        note.textContent = successMessage;
       }
+
+      alert(successMessage);
     } catch (error) {
       if (note) {
         note.textContent = "Une erreur est survenue. Merci de reessayer ou de nous contacter par email.";
@@ -76,3 +80,4 @@ if (form) {
     }
   });
 }
+

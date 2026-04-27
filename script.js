@@ -1,4 +1,36 @@
 const form = document.querySelector(".rsvp-form");
+const successModal = document.getElementById("successModal");
+const successModalMessage = document.getElementById("successModalMessage");
+const modalCloseButtons = document.querySelectorAll("[data-modal-close]");
+
+function openSuccessModal(message) {
+  if (!successModal || !successModalMessage) {
+    return;
+  }
+
+  successModalMessage.textContent = message;
+  successModal.classList.add("is-open");
+  successModal.setAttribute("aria-hidden", "false");
+}
+
+function closeSuccessModal() {
+  if (!successModal) {
+    return;
+  }
+
+  successModal.classList.remove("is-open");
+  successModal.setAttribute("aria-hidden", "true");
+}
+
+modalCloseButtons.forEach((btn) => {
+  btn.addEventListener("click", closeSuccessModal);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeSuccessModal();
+  }
+});
 
 if (form) {
   const submitBtn = form.querySelector('button[type="submit"]');
@@ -70,7 +102,7 @@ if (form) {
         note.textContent = successMessage;
       }
 
-      alert(successMessage);
+      openSuccessModal(successMessage);
     } catch (error) {
       if (note) {
         note.textContent = "Une erreur est survenue. Merci de reessayer ou de nous contacter par email.";
@@ -80,4 +112,3 @@ if (form) {
     }
   });
 }
-

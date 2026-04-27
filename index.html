@@ -144,7 +144,7 @@
               <a class="btn" href="mailto:kenza.julien@mariage.fr?subject=RSVP%20-%20Kenza%20%26%20Julien&body=Bonjour%20Kenza%20et%20Julien%2C%0D%0A%0D%0ANous%20serons%20...%20personnes.%0D%0AMerci%20%21">Répondre par e‑mail</a>
               <a class="link" href="#programme">Voir le programme</a>
             </div>
-                                    <form class="rsvp-form" action="https://formspree.io/f/xkoprjwa" method="post">
+                                    <form class="rsvp-form" action="https://formspree.io/f/xkoprjwa" method="post" data-sheet-webhook="https://script.google.com/macros/s/AKfycbxCHapU0wujLfGj8MsAKZ_Rx1cwg8LQtOjshSYmzq0sptZ5Gt0Th-02GRkLAzktEb8osw/exec">
               <div class="form-ribbon">Confirmation</div>
               <input type="hidden" name="_subject" value="RSVP Kenza & Julien">
               <input type="hidden" name="_language" value="fr">
@@ -165,7 +165,7 @@
               <input type="text" name="_gotcha" style="display:none">
               <p class="form-hint">Ces informations restent privées et servent uniquement à préparer votre venue.</p>
               <button type="submit" class="btn btn--full">Envoyer ma confirmation</button>
-              <p class="form-note">Le formulaire est envoyé via Formspree. Vous recevrez un accusé si votre adresse est valide.</p>
+              <p class="form-note" aria-live="polite">Le formulaire est envoyé via Formspree. Vous recevrez un accusé si votre adresse est valide.</p>
             </form>
           </div>
         </div>
@@ -183,6 +183,8 @@
   <script src="script.js" defer></script>
 </body>
 </html>
+
+
 
 
 
